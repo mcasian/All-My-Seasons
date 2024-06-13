@@ -1,0 +1,752 @@
+/* General styles */
+body {
+  background-color: #f5f5dc; /* Light beige background for a scrapbook feel */
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Fun, playful font */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+button{
+  background-color: #d4af37; /* Gold color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+button:hover {
+  background-color: #b8860b; /* Darker gold color on hover */
+  transform: translateY(-1px); /* Add a slight upward movement on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Reset the upward movement on click */
+}
+
+
+
+
+
+/* Login Page Styles */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px dashed #d4af37; /* Gold dashed border */
+  text-align: center;
+  width: 40vw;
+}
+
+h1 {
+  color: #d4af37; /* Gold color */
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginForm input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 10px;
+  font-size: 1.2em;
+  background: #fffacd; /* Lemon chiffon background */
+}
+
+.loginForm button {
+  background: #d4af37; /* Gold background */
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.loginForm button:hover {
+  background: #c39d26; /* Darker gold for hover effect */
+}
+
+.noAccountLink {
+  margin-top: 20px;
+}
+
+.noAccountLink p {
+  font-size: 1.2em;
+  color: #2f4f4f; /* Dark slate gray color */
+}
+
+.noAccountLink a {
+  color: #d4af37; /* Gold color for link */
+  text-decoration: none;
+}
+
+.noAccountLink a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Create Account Page Styles */
+.create-account-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.create-account-form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px dashed #d4af37; /* Gold dashed border */
+  text-align: center;
+  width: 400px;
+}
+
+h1 {
+  color: #d4af37; /* Gold color */
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.createAccountForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createAccountForm input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 10px;
+  font-size: 1.2em;
+  background: #fffacd; /* Lemon chiffon background */
+}
+
+.createAccountForm button {
+  background: #d4af37; /* Gold background */
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.createAccountForm button:hover {
+  background: #c39d26; /* Darker gold for hover effect */
+}
+
+.password-requirements {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #2f4f4f; /* Dark slate gray color */
+}
+
+.already-have-account-link {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: #2f4f4f; /* Dark slate gray color */
+}
+
+.already-have-account-link a {
+  color: #d4af37; /* Gold color for link */
+  text-decoration: none;
+}
+
+.already-have-account-link a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/* Create Memory Page Styles */
+.create-memory-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.create-memory-form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px dashed #d4af37; /* Gold dashed border */
+  text-align: center;
+  width: 50vw;
+  margin: 20px;
+}
+
+.create-memory-form-container h1 {
+  color: #d4af37; /* Gold color */
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.createMemoryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  margin-top: 40px;
+  text-align: center; /* Center the labels */
+}
+
+.form-input label {
+  margin-bottom: 0px;
+  font-size: 1.2em;
+  color: #2f4f4f; /* Dark slate gray color */
+}
+
+.form-input input[type="date"],
+.form-input input[type="file"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 10px;
+  font-size: 1em;
+  background: #fffacd; /* Lemon chiffon background */
+}
+
+.form-input textarea {
+  width: 100%;
+  margin-top: 0px;
+  padding: 10px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 10px;
+  font-size: 1em;
+  background: #fffacd; /* Lemon chiffon background */
+}
+
+.form-input textarea::placeholder {
+  color: #2f4f4f; /* Dark slate gray color */
+}
+
+.form-input p {
+  margin-top: 5px;
+  font-size: 1em;
+  color: #2f4f4f; /* Dark slate gray color */
+}
+
+.form-input button {
+  background: #d4af37; /* Gold background */
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.form-input button:hover {
+  background: #c39d26; /* Darker gold for hover effect */
+}
+
+.form-input label {
+  display: block;
+}
+
+.form-input input[type="file"] {
+  margin-top: 10px;
+}
+
+
+
+
+
+.home-container {
+  text-align: center;
+}
+
+.welcome-text {
+  color: #d4af37; /* Gold color */
+  font-size: 2em;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.action-button {
+  background-color: #d4af37; /* Gold color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #b8860b; /* Darker gold color on hover */
+}
+
+.random-post {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 2px solid #d4af37; /* Gold border */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fffacd; /* Lemon chiffon background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.random-post-title {
+  color: #2f4f4f; /* Dark slate gray color */
+  font-size: 1.5em;
+}
+
+.random-post-content {
+  font-size: 1.2em;
+}
+
+
+
+
+
+/* Memory Component Styles */
+.memory-page-header {
+  text-align: center;
+}
+
+.memory-page-header h1 {
+  color: #d4af37; /* Gold color */
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.memory-page-header h2 {
+  color: #2f4f4f; /* Dark slate gray color */
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: "10px"
+}
+
+.memories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memories-container {
+  width: 80vw; /* Adjust width as needed */
+  margin: auto; /* Center the container */
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 20px; /* Add padding to separate the memories from the border */
+  background-color: white; /* White background color */
+  border: 2px dashed #d4af37; /* Gold dashed border */
+  border-radius: 20px; /* Rounded border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.memory {
+  display: flex;
+  width: 70vw;
+  border: 2px solid #d4af37; /* Gold border */
+  border-radius: 50px;
+  padding: 25px;
+  margin: 15px auto;
+  background: #fff8dc; /* Cornsilk background for a warm, paper-like feel */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center; /* Center the content horizontally */
+  position: relative; /* Needed for pseudo-elements */
+}
+
+.memory.left-image .imageContainer {
+  order: 0;
+}
+
+.memory.left-image .memoryText {
+  order: 1;
+  padding-left: 20px; /* Space between image and text */
+}
+
+.memory.right-image .imageContainer {
+  order: 1;
+}
+
+.memory.right-image .memoryText {
+  order: 0;
+  padding-right: 20px; /* Space between image and text */
+}
+
+.imageContainer {
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Needed for pseudo-elements */
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memoryText {
+  flex: 1;
+  text-align: center;
+}
+
+.memoryDateContainer {
+  width: 75%;
+  padding: 10px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 50px;
+  margin: auto;
+  background: #fffacd; /* Lemon chiffon background */
+  position: relative; /* Needed for pseudo-elements */
+}
+
+.memoryDescriptionContainer {
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 20px;
+  background: #fffacd; /* Lemon chiffon background */
+  font-size: 1.2em;
+  color: #2f4f4f; /* Dark slate gray color */
+  position: relative; /* Needed for pseudo-elements */
+}
+
+/* Tape decorations for memory div */
+.memory::before, .memory::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background: rgba(212, 175, 55, 0.5); /* Gold with 50% opacity */
+  transform: rotate(-45deg); /* Rotate to look like tape */
+  z-index: 1; /* Ensure it is above the memory div */
+}
+
+.memory::before {
+  top: -5px;
+  left: -15px;
+}
+
+.memory::after {
+  bottom: -15px;
+  left: -15px;
+}
+
+/* Extended tape for top right corner, covering both memory and image */
+.memory .imageContainer::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: rgba(212, 175, 55, 0.5); /* Gold with 50% opacity */
+  transform: rotate(-45deg); /* Rotate to look like tape */
+  top: -20px;
+  right: -20px;
+  z-index: 1; /* Ensure it is above the image */
+}
+
+/* Tape decoration for memory date container, top right only */
+.memoryDateContainer::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background: rgba(212, 175, 55, 0.5); /* Gold with 50% opacity */
+  transform: rotate(45deg); /* Rotate to look like tape */
+  top: -10px;
+  right: 15px; /* Adjusted right positioning */
+  z-index: 1; /* Ensure it is above the memory date container */
+}
+
+/* Tape decoration for memory description container */
+.memoryDescriptionContainer::before,
+.memoryDescriptionContainer::after {
+  content: '';
+  position: absolute;
+  height: 20px; /* Adjust height as needed */
+  background: rgba(212, 175, 55, 0.5); /* Gold with 50% opacity */
+  z-index: 1; /* Ensure it is above the memory description container */
+}
+
+.memoryDescriptionContainer::before {
+  top: -10px; /* Position at the top */
+  width: 20%; /* Extend to cover the entire container */
+  transform: rotate(10deg);
+}
+
+.memoryDescriptionContainer::after {
+  bottom: -10px; /* Position at the bottom */
+  width: 12.5%; /* Extend to cover the entire container */
+  left: 20px;
+  transform: rotate(-7deg);
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.dropbtn::before {
+  content: '\22EE'; /* Unicode for vertical ellipsis */
+  font-size: 20px; /* Adjust size as needed */
+}
+
+.dropbtn::after {
+  content: '';
+  position: absolute;
+  height: 30px; /* Adjust height as needed */
+  width: 140px;
+  background: rgba(212, 175, 55, 0.5); /* Gold with 50% opacity */
+  z-index: 1; /* Ensure it is above the memory description container */
+  top: 150px;
+  left: -40px;
+  transform: rotate(60deg);
+
+}
+.dropbtn {
+  background-color: #d4af37; /* Gold color */
+  color: white;
+  width: 40px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  color: black;
+  padding-left: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content p:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* Sorting Dropdown Menu */
+.sort-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sort-dropdown p {
+  font-size: 1.2em;
+  color: #2f4f4f; /* Dark slate gray color */
+  margin-bottom: 10px;
+}
+
+.sort-dropdown select {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #d4af37; /* Gold border */
+  background-color: #fffacd; /* Lemon chiffon background */
+  color: #2f4f4f; /* Dark slate gray text color */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.sort-dropdown select:hover {
+  background-color: #fff8dc; /* Slightly darker background on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.sort-dropdown select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5); /* Gold outline on focus */
+}
+
+.top-left-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.home-button {
+  background-color: #d4af37; /* Gold color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.home-button:hover {
+  background-color: #b8860b; /* Darker gold color on hover */
+  transform: translateY(-2px); /* Add a slight upward movement on hover */
+}
+
+.home-button:active {
+  transform: translateY(0); /* Reset the upward movement on click */
+}
+
+.top-right-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+
+
+
+/* Specific styles for UpdateMemory component */
+.update-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white; /* White background for the form */
+  border: 2px dashed #d4af37; /* Gold dashed border */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  text-align: center;
+}
+
+.update-page h1 {
+  color: #d4af37; /* Gold color for headings */
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.update-page p {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+/* Form styles */
+.updateMemoryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.updateMemoryForm .form-input {
+  width: 100%;
+  text-align: center;
+}
+
+.updateMemoryForm .form-input label {
+  font-size: 1.2em;
+  color: #d4af37; /* Gold color for labels */
+}
+
+.updateMemoryForm .form-input input[type="date"],
+.updateMemoryForm .form-input textarea {
+  width: calc(100% - 40px); /* Adjust width to account for padding */
+  padding: 10px;
+  border: 1px solid #d4af37; /* Gold border */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 1em;
+  background-color: #fffacd; /* Lemon chiffon background */
+  color: #2f4f4f; /* Dark slate gray text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+.updateMemoryForm .form-input input[type="date"]:focus,
+.updateMemoryForm .form-input textarea:focus {
+  outline: none;
+  border-color: #ffdf00; /* Brighter gold on focus */
+  box-shadow: 0 0 5px rgba(255, 223, 0, 0.5); /* Bright gold glow on focus */
+}
+
+.updateMemoryForm .form-input textarea {
+  resize: none; /* Prevent resizing of the textarea */
+}
+
+.updateMemoryForm .form-input button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  background-color: #d4af37; /* Gold background */
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.updateMemoryForm .form-input button:hover {
+  background-color: #b8860b; /* Darker gold on hover */
+}
+
+.updateMemoryForm .form-input p {
+  font-size: 1em;
+  color: #2f4f4f; /* Dark slate gray color */
+}
