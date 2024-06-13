@@ -1,6 +1,7 @@
 // ---------- IMPORTS ----------
 import React, { useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 // ---------- IMPORTS END ----------
 
 
@@ -9,6 +10,7 @@ import axios from 'axios';
 function CreateAccount() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
 
     // Submits a new account to the database
@@ -27,9 +29,10 @@ function CreateAccount() {
                 username,
                 password,
             });
-            if (response.status === 200) {
+            if (response.status === 201) {
                 alert('Your account was successfully created');
                 console.log('Account creation successful:', response.data);
+                navigate('/');
             }
         } catch(error){
             console.log(error);
