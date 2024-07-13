@@ -22,6 +22,7 @@ import Default from './pages/Default';
 function App() {
   const [userData, setUserData] = useState(null);
   const [loginStatus, setLoginStatus] = useState(false);
+  const [memories, setMemories] = useState([]);
 
 
   // Sets the title the application on the tabs bar
@@ -48,7 +49,30 @@ function App() {
         }
       };
     fetchUserData();
-  }, [setUserData]);
+  }, []);
+
+  // Fetches the all of the user's memories from the database
+  useEffect(() => {
+    const fetchAllMemories = async () => {
+        try {
+            const res = await axios.get("https://all-my-seasons-express-api.vercel.app/api/memories", {
+                params: {
+                    username: userData.username,
+                }
+            });
+
+            if (res.status === 200) {
+                console.log('Memory data:', res.data);
+                setMemories(res.data);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    if (userData) {
+        fetchAllMemories();
+    }
+}, [userData]);
 
   // UseEffect to log loginStatus
   useEffect(() => {
@@ -60,7 +84,7 @@ function App() {
   // ---------- JSX HTML RETURN ----------
   return (
     <BrowserRouter>
-      <LoginContext.Provider value={{ userData, setUserData, setLoginStatus}}>
+      <LoginContext.Provider value={{ userData, setUserData, setLoginStatus, memories, setMemories,}}>
         <Routes>
           {loginStatus ? (
             <>

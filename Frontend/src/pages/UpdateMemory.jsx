@@ -36,10 +36,10 @@ function UpdateMemory() {
                 navigate('/home');
             }
         };
-        if(userData){
+        if(userData && memoryId){
             fetchPostDetail();
         }
-    }, [memoryId, userData]);
+    }, [memoryId, userData, navigate]);
 
     // UseEffect to log memoryData
     useEffect(() => {
@@ -75,6 +75,7 @@ function UpdateMemory() {
             });
             alert('Memory updated successfully');
             navigate('/memories')
+            window.location.reload();
         } catch (err) {
             console.error('Error updating memory:', err);
             alert('Failed to update memory');

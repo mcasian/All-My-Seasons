@@ -9,37 +9,13 @@ import axios from 'axios';
 
 // ---------- REACT COMPONENT ----------
 function Memories() {
-    const [memories, setMemories] = useState([]);
+    const {memories, userData} = useContext(LoginContext);
     const [sortOrder, setSortOrder] = useState('newest');
-    const { userData } = useContext(LoginContext);
     const navigate = useNavigate();
 
     // UseEffect to log userData
     useEffect(() => {
         console.log("User Data: ", userData);
-    }, [userData]);
-
-    // Fetches the all of the user's memories from the database
-    useEffect(() => {
-        const fetchAllMemories = async () => {
-            try {
-                const res = await axios.get("https://all-my-seasons-express-api.vercel.app/api/memories", {
-                    params: {
-                        username: userData.username,
-                    }
-                });
-
-                if (res.status === 200) {
-                    console.log('Memory data:', res.data);
-                    setMemories(res.data);
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        if (userData) {
-            fetchAllMemories();
-        }
     }, [userData]);
 
     // UseEffect to log the user's memories

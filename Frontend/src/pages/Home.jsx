@@ -1,57 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import { LoginContext } from '../Contexts/UserDataContext';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-    const { userData, setUserData, setLoginStatus } = useContext(LoginContext);
+    const { userData, setUserData, setLoginStatus, memories } = useContext(LoginContext);
     const navigate = useNavigate();
     const [randomMemory, setRandomMemory] = useState(null);
-    const [memories, setMemories] = useState(null);
 
 
-    // Fetches the user's data using the JWT login token stored in local storage
-    useEffect(() => {
-        const fetchUserData = async () => {
-            const token = localStorage.getItem('token');
-            if (token) {
-                try {
-                    const response = await axios.get('https://all-my-seasons-express-api.vercel.app/api/user', {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    });
-                    setUserData(response.data);
-                } catch (error) {
-                    console.error('Error fetching user data:', error);
-                }
-            }
-        };
-        fetchUserData();
-    }, [setUserData]);
-
-    // Fetches the all of the user's memories from the database
-    useEffect(() => {
-        const fetchAllMemories = async () => {
-            try {
-                const res = await axios.get("https://all-my-seasons-express-api.vercel.app/api/memories", {
-                    params: {
-                        username: userData.username,
-                    }
-                });
-
-                if (res.status === 200) {
-                    console.log('Memory data:', res.data);
-                    setMemories(res.data);
-                }
-            } catch (err) {
-                console.log(err);
-            }
-        };
-        if (userData) {
-            fetchAllMemories();
-        }
-    }, [userData]);
+    
 
     // UseEffect to log the user's memories
     useEffect(() => {
