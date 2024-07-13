@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import CreateMemory from './pages/CreateMemory';
 import Memories from './pages/Memories';
 import UpdateMemory from './pages/UpdateMemory';
+import Default from './pages/Default';
 // ---------- IMPORTS END ----------
 
 
@@ -63,8 +64,9 @@ function App() {
         <Routes>
           {loginStatus ? (
             <>
+            <Route path="/" element={<Default />} />
             <Route path="/createaccount" element={<CreateAccount />} />
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/creatememory" element={<CreateMemory />} />
             <Route path="/memories" element={<Memories />} />
@@ -72,8 +74,9 @@ function App() {
             </>
           ) :  (
           <>
+            <Route path="/" element={<Default />} />
             <Route path="/createaccount" element={<CreateAccount />} />
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
           </>)}
           
         </Routes>

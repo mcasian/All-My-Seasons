@@ -54,7 +54,7 @@ function CreateAccount() {
                 <button type="submit">Create Account</button>
             </form>
             <p style={{marginTop: "10px", marginBottom: "5px"}}>Already have an account?</p>
-            <a id="loginLink" href="/">Login To Existing Account</a>
+            <a id="loginLink" href="/login">Login To Existing Account</a>
         </div>
     )
 }
