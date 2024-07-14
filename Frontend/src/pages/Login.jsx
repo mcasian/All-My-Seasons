@@ -30,8 +30,19 @@ function Login() {
                 const { loginToken: token } = response.data;  // Destructure correctly
                 console.log("Login JWT Token: ", token);
                 localStorage.setItem('token', token); // Store the token
-                setUserData(response.data);
-                setLoginStatus(true);
+
+                try {
+                    const decodedUserData = await axios.get('https://all-my-seasons-express-api.vercel.app/api/user', {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                     });
+                    setUserData(decodedUserData.data);
+                    setLoginStatus(true)
+                } catch (error) {
+                  console.error('Error fetching user data:', error);
+                }
+                
                 alert('Login successful');
                 navigate("/home");
             }

@@ -8,8 +8,6 @@ function Home() {
     const [randomMemory, setRandomMemory] = useState(null);
 
 
-    
-
     // UseEffect to log the user's memories
     useEffect(() => {
         console.log("User's Memories: ", memories);
