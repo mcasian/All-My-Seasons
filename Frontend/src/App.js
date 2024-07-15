@@ -64,6 +64,14 @@ function App() {
             if (res.status === 200) {
                 console.log('Memory data:', res.data);
                 setMemories(res.data);
+
+                const preloadImages = (allMemories) => {
+                  allMemories.forEach((memoryImg) => {
+                    const img = new Image();
+                    img.src = memoryImg.img;
+                  });
+                };
+                preloadImages(res.data);
             }
         } catch (err) {
             console.log(err);
