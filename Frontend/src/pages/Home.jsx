@@ -51,13 +51,20 @@ function Home() {
     // ---------- JSX HTML RETURN ----------
     return (
         <div className="home-container">
+            <div className="top-left-button">
+                <button className="profile-button" onClick={() => navigate("/profile")}>Profile</button>
+            </div>
+
             <div className="top-right-button">
                 <button className="logout-button" onClick={logout}>Logout</button>
             </div>
 
             {userData ?
-                <h1 className="welcome-text">{`Welcome, ${userData.username}! This is your home page`}</h1>
-                : <h1 className="welcome-text">Welcome! This is your home page</h1>}
+                <h1 className="welcome-text">Welcome, {userData.username}! This is your home page.</h1>
+            : 
+                <h1 className="welcome-text">Welcome! This is your home page</h1>
+            }
+            
                 <p>There will be more stuff here soon...</p>
 
             <div className="button-container">

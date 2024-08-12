@@ -13,6 +13,7 @@ function Memories() {
     const [sortOrder, setSortOrder] = useState('newest');
     const navigate = useNavigate();
 
+    
     // UseEffect to log userData
     useEffect(() => {
         console.log("User Data: ", userData);
@@ -109,7 +110,7 @@ function Memories() {
                                 <p onClick={() => handleDelete(memory.id)}>Delete</p>
                             </div>
                         </div>
-
+                        
                         <div className="imageContainer">
                             <img src={memory.imageUrl} alt="za memory" style={{ borderRadius: "30px" }} />
                         </div>

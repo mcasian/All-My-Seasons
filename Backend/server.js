@@ -1,5 +1,15 @@
+/*
+**NOTE TO SELF FOR BACKEND DEVELOPMENT**
+    Be sure to change http endpoints to "http://localhost:*****"
+    and to start the express server locally
+
+    Remember to change http endpoints back to
+    "https://all-my-seasons-express-api.vercel.app"
+    before pushing to production
+*/
+
 // ---------- IMPORTS ----------
-import express from 'express';
+import express, { query } from 'express';
 import mysql from 'mysql';
 import cors from 'cors';
 import bcrypt from 'bcryptjs';
@@ -214,7 +224,7 @@ app.get("/api/user", authenticateJWT, (req, res) => {
     // This function assumes user ID is in the JWT payload
 
     // Query the database for the user data using the user ID from the token payload
-    const query = "SELECT id, username FROM users WHERE id = ?";
+    const query = "SELECT id, username, soulmate FROM users WHERE id = ?";
     db.query(query, [req.user.id], (err, result) => {
         if (err) {
             console.error('Database error:', err);
@@ -222,6 +232,151 @@ app.get("/api/user", authenticateJWT, (req, res) => {
         }
         // If the query is successful, return user data
         res.status(200).json(result[0]);
+    });
+});
+
+
+/**
+ * Sends a soulmate request to a user
+ * 
+ * @param requester - the user sending the soulmate request
+ * @param reciever - the user recieving the soulmate request
+ */
+app.post("/api/soulmate-request", async (req, res) => {
+    const { requester, reciever } = req.body;
+
+    try {
+        // First, check that the recieving user does not already have a soulmate
+        // Query for check happens below
+        const checkQuery = 'SELECT soulmate FROM users WHERE username = ?';
+        const checkResult = await new Promise((resolve, reject) => {
+            db.query(checkQuery, [reciever], (err, result) => {
+                if (err) return reject(err);
+                resolve(result);
+            });
+        });
+
+        // Actual validation that the recieving user does not have a soulmate happens here
+        if (checkResult[0].soulmate) {
+            return res.status(409).json({ message: "You already have a soulmate" });
+        }
+
+        // Query to add a new soulmate request to the database
+        const query = 'INSERT INTO soulmate_requests (`sender`, `reciever`) VALUES (?, ?)';
+        await new Promise((resolve, reject) => {
+            db.query(query, [requester, reciever], (err, result) => {
+                if (err) return reject(err);
+                resolve(result);
+            });
+        });
+
+        res.status(200).json({ message: "soulmate request successful" });
+
+    } catch (err) {
+        console.error('Database error:', err);
+        res.status(500).json({ message: "Server error" });
+    }
+});
+
+
+/**
+ * Gets all of the user's soulmate requests
+ * 
+ * @param username - the username of the user who is recieving said requests
+ */
+app.get("/api/soulmate-requests", (req, res) => {
+    const {username} = req.query;
+
+    const query = `SELECT * FROM soulmate_requests WHERE reciever = ?`;
+    db.query(query, [username], (err, result) => {
+        if (err) {
+            console.error('Database error:', err);
+            return res.status(500).json({ message: "Server error" });
+        }
+        return res.status(200).json(result);
+    });
+});
+
+
+/**
+ * Accepts a soulmate request and deletes the [now accepted] request
+ * *NOTE* IN PROGRESS
+ * *NOTE* Yes I am aware this is callback hell, I will refactor later lol
+ * @param username - the username of the user whose soulmate will be accepted
+ */
+app.put("/api/soulmate-request", (req, res) => {
+    const { requester, reciever } = req.query;
+
+    const insertQuery = `
+        UPDATE users 
+        SET soulmate = CASE 
+            WHEN username = ? THEN ?
+            WHEN username = ? THEN ?
+            ELSE soulmate
+        END
+        WHERE username IN (?, ?)
+    `;
+    const deleteQuery = 'DELETE FROM soulmate_requests WHERE sender = ? OR sender = ? OR reciever = ? OR reciever = ?';
+
+    db.getConnection((err, connection) => {
+        if (err) {
+            console.error('Error getting connection from pool:', err);
+            return res.status(500).json({ message: "Server error" });
+        }
+
+        connection.beginTransaction((transactionErr) => {
+            if (transactionErr) {
+                console.error('Transaction start error:', transactionErr);
+                connection.release();
+                return res.status(500).json({ message: "Server error" });
+            }
+
+            connection.query(insertQuery, [reciever, requester, requester, reciever, requester, reciever], (insertErr, insertResult) => {
+                if (insertErr) {
+                    console.error('Database error during insert:', insertErr);
+                    return connection.rollback(() => {
+                        connection.release();
+                        res.status(500).json({ message: "Server error" });
+                    });
+                }
+
+                connection.query(deleteQuery, [requester, reciever, requester, reciever], (deleteErr, deleteResult) => {
+                    if (deleteErr) {
+                        console.error('Database error during delete:', deleteErr);
+                        return connection.rollback(() => {
+                            connection.release();
+                            res.status(500).json({ message: "Server error" });
+                        });
+                    }
+
+                    connection.commit((commitErr) => {
+                        if (commitErr) {
+                            console.error('Transaction commit error:', commitErr);
+                            return connection.rollback(() => {
+                                connection.release();
+                                res.status(500).json({ message: "Server error" });
+                            });
+                        }
+
+                        connection.release();
+                        res.status(200).json({ message: "Soulmate inserted and previous requests deleted successfully" });
+                    });
+                });
+            });
+        });
+    });
+});
+
+app.delete("/api/soulmate-request", (req, res) => {
+    const { requester, reciever } = req.query;
+    
+    const deleteQuery = 'DELETE FROM soulmate_requests WHERE sender = ? OR sender = ? OR reciever = ? OR reciever = ?';
+    db.query(deleteQuery, [requester, reciever, requester, reciever], (deleteErr, deleteResult) => {
+        if (deleteErr) {
+            console.error('Database error:', err);
+            return res.status(500).json({ message: "Server error" });
+        }
+        return res.status(200).json({ message: "Soulmate request deleted successfully" });
     });
 });
 // ----- USER RELATED METHODS END -----
@@ -286,18 +441,24 @@ app.post("/api/memories", upload.single('img'), async (req, res) => {
  * @return all of the posts made by the user
  */
 app.get("/api/memories", async (req, res) => {
-    const { username } = req.query;
+    const { username, soulmate } = req.query;
 
     // Validates that a username was passed
     if (!username) {
         return res.status(400).json({ message: "Username is required" });
     }
 
+    let query = `SELECT * FROM memories WHERE creator = ?`
+    let queryDependency = [username];
+    if (soulmate) {
+        query = `SELECT * FROM memories WHERE creator = ? OR creator = ?`
+        queryDependency = [username, soulmate];
+    }
+
     // Tries to get memory data from the database and URLs for each memory image from S3
     try {
         // Gets memory data from the database
-        const query = `SELECT * FROM memories WHERE creator = ?`;
-        db.query(query, [username], async (err, results) => {
+        db.query(query, queryDependency, async (err, results) => {
             if (err) {
                 console.error('Database error:', err);
                 return res.status(500).json({ message: "Failed to fetch memories. Please try again later." });

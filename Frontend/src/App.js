@@ -14,6 +14,7 @@ import CreateMemory from './pages/CreateMemory';
 import Memories from './pages/Memories';
 import UpdateMemory from './pages/UpdateMemory';
 import Default from './pages/Default';
+import Profile from './pages/Profile';
 // ---------- IMPORTS END ----------
 
 
@@ -37,12 +38,12 @@ function App() {
         if (token) {
           try {
               const response = await axios.get('https://all-my-seasons-express-api.vercel.app/api/user', {
-                  headers: {
-                      Authorization: `Bearer ${token}`,
-                  },
-               });
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              });
               setUserData(response.data);
-              setLoginStatus(true)
+              setLoginStatus(true);
           } catch (error) {
             console.error('Error fetching user data:', error);
           }
@@ -58,6 +59,7 @@ function App() {
             const res = await axios.get("https://all-my-seasons-express-api.vercel.app/api/memories", {
                 params: {
                     username: userData.username,
+                    soulmate: userData.soulmate,
                 }
             });
 
@@ -95,7 +97,7 @@ function App() {
       <LoginContext.Provider value={{ userData, setUserData, setLoginStatus, memories, setMemories,}}>
         <Routes>
           {loginStatus ? (
-            <>
+          <>
             <Route path="/" element={<Default />} />
             <Route path="/createaccount" element={<CreateAccount />} />
             <Route path="/login" element={<Login />} />
@@ -103,7 +105,8 @@ function App() {
             <Route path="/creatememory" element={<CreateMemory />} />
             <Route path="/memories" element={<Memories />} />
             <Route path="/updatememory/:memoryId" element={<UpdateMemory />} />
-            </>
+            <Route path="/profile" element={<Profile />} />
+          </>
           ) :  (
           <>
             <Route path="/" element={<Default />} />
