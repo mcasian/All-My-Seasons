@@ -103,6 +103,10 @@ function Memories() {
                 {sortedMemories.map((memory, index) => (
                     <div className={`memory ${index % 2 === 0 ? 'left-image' : 'right-image'}`} key={memory.id}>
 
+                        <div className="creator-tag">
+                            <p>Added by {memory.creator}</p>
+                        </div>
+
                         <div className="dropdown">
                             <button className="dropbtn"></button>
                             <div className="dropdown-content">
