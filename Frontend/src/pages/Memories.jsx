@@ -104,7 +104,7 @@ function Memories() {
                     <div className={`memory ${index % 2 === 0 ? 'left-image' : 'right-image'}`} key={memory.id}>
 
                         <div className="creator-tag">
-                            <p>Added by {memory.creator}</p>
+                            <p>Added by <span><strong>{memory.creator}</strong></span></p>
                         </div>
 
                         <div className="dropdown">
