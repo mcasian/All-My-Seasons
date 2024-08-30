@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import "../style/Default.css";
 import { useNavigate } from 'react-router-dom';
 
 function Default() {

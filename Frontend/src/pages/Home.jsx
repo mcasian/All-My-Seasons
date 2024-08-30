@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { LoginContext } from '../Contexts/UserDataContext';
+import "../style/Home.css";
 import { useNavigate } from 'react-router-dom';
 
 function Home() {

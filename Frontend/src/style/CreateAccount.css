@@ -1,0 +1,77 @@
+/* Create Account Page Styles */
+.create-account-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .create-account-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #d4af37; /* Gold dashed border */
+    text-align: center;
+    width: 400px;
+  }
+  
+  h1 {
+    color: #d4af37; /* Gold color */
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .createAccountForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .createAccountForm input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #d4af37; /* Gold border */
+    border-radius: 10px;
+    font-size: 1.2em;
+    background: #fffacd; /* Lemon chiffon background */
+  }
+  
+  .createAccountForm button {
+    background: #d4af37; /* Gold background */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .createAccountForm button:hover {
+    background: #c39d26; /* Darker gold for hover effect */
+  }
+  
+  .password-requirements {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #2f4f4f; /* Dark slate gray color */
+  }
+  
+  .already-have-account-link {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #2f4f4f; /* Dark slate gray color */
+  }
+  
+  .already-have-account-link a {
+    color: #d4af37; /* Gold color for link */
+    text-decoration: none;
+  }
+  
+  .already-have-account-link a:hover {
+    text-decoration: underline;
+  }

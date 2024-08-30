@@ -1,0 +1,95 @@
+/* Create Memory Page Styles */
+.create-memory-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .create-memory-form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #d4af37; /* Gold dashed border */
+    text-align: center;
+    width: 50vw;
+    margin: 20px;
+  }
+  
+  .create-memory-form-container h1 {
+    color: #d4af37; /* Gold color */
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .createMemoryForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-input {
+    margin-top: 40px;
+    text-align: center; /* Center the labels */
+  }
+  
+  .form-input label {
+    margin-bottom: 0px;
+    font-size: 1.2em;
+    color: #2f4f4f; /* Dark slate gray color */
+  }
+  
+  .form-input input[type="date"],
+  .form-input input[type="file"] {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #d4af37; /* Gold border */
+    border-radius: 10px;
+    font-size: 1em;
+    background: #fffacd; /* Lemon chiffon background */
+  }
+  
+  .form-input textarea {
+    width: 100%;
+    margin-top: 0px;
+    padding: 10px;
+    border: 1px solid #d4af37; /* Gold border */
+    border-radius: 10px;
+    font-size: 1em;
+    background: #fffacd; /* Lemon chiffon background */
+  }
+  
+  .form-input textarea::placeholder {
+    color: #2f4f4f; /* Dark slate gray color */
+  }
+  
+  .form-input p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #2f4f4f; /* Dark slate gray color */
+  }
+  
+  .form-input button {
+    background: #d4af37; /* Gold background */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .form-input button:hover {
+    background: #c39d26; /* Darker gold for hover effect */
+  }
+  
+  .form-input label {
+    display: block;
+  }
+  
+  .form-input input[type="file"] {
+    margin-top: 10px;
+  }

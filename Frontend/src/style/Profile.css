@@ -1,0 +1,99 @@
+/* Profile Component Styles */
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5dc; /* Background color for the web app */
+  }
+  
+  .top-right-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .logout-button {
+    background-color: #d4af37; /* Gold */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px; /* More rounded corners */
+    cursor: pointer;
+  }
+  
+  .soulmate-request-search {
+    margin: 20px 0;
+  }
+  
+  .soulmate-request-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px; /* More rounded corners */
+    font-size: 16px;
+    width: 300px; /* Longer search bar */
+  }
+  
+  .search-button {
+    background-color: #d4af37; /* Gold */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px; /* More rounded corners */
+    cursor: pointer;
+  }
+  
+  .soulmate-request-listing {
+    width: 40vw;
+    padding: 20px;
+    background-color: white;
+    border: 2px dashed #d4af37;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .soulmate-request {
+    background-color: #d4af37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .soulmate-request h3 {
+    margin: 0;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .accept-button {
+    background-color: #4CAF50; /* A bit darker green */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .decline-button {
+    background-color: #F44336; /* A bit darker red */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+  }

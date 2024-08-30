@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import "../style/UpdateMemory.css";
 import { useNavigate, useParams } from 'react-router-dom';
 import { LoginContext } from '../Contexts/UserDataContext';
 import axios from "axios";

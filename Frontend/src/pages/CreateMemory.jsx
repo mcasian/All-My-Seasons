@@ -1,6 +1,7 @@
 // ---------- IMPORTS ----------
 import React, { useState, useEffect, useContext } from 'react';
 import { LoginContext } from '../Contexts/UserDataContext';
+import "../style/CreateMemory.css"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // ---------- IMPORTS END ----------

@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 
 // Component imports
-import './App.css';
+import './style/App.css';
 import { LoginContext } from './Contexts/UserDataContext';
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';

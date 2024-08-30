@@ -1,0 +1,32 @@
+/* General styles */
+body {
+  background-color: #f5f5dc; /* Light beige background for a scrapbook feel */
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Fun, playful font */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+button{
+  background-color: #d4af37; /* Gold color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+button:hover {
+  background-color: #b8860b; /* Darker gold color on hover */
+  transform: translateY(-1px); /* Add a slight upward movement on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Reset the upward movement on click */
+}

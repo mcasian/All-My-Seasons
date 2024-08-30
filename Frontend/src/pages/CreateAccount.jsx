@@ -1,5 +1,6 @@
 // ---------- IMPORTS ----------
 import React, { useState} from 'react';
+import "../style/CreateAccount.css"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // ---------- IMPORTS END ----------
