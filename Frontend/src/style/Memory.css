@@ -455,9 +455,3 @@
   transform: translateY(0);
   /* Reset the upward movement on click */
 }
-
-.top-right-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}

@@ -16,6 +16,14 @@
   right: 20px;
 }
 
+@media (max-width: 768px) {
+  .top-right-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+}
+
 .logout-button {
   background-color: #d4af37;
   /* Gold */

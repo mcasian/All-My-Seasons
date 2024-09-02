@@ -19,6 +19,20 @@
   width: 40vw;
 }
 
+@media (max-width: 768px) {
+  .login-form-container {
+    background: white;
+    margin: 35px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #d4af37;
+    /* Gold dashed border */
+    text-align: center;
+    width: 65vw;
+  }
+}
+
 h1 {
   color: #d4af37;
   /* Gold color */
