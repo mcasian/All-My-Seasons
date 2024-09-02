@@ -422,6 +422,14 @@
   left: 20px;
 }
 
+@media (max-width: 768px) {
+  .top-left-button {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+}
+
 .home-button {
   background-color: #d4af37;
   /* Gold color */
