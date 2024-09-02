@@ -1,82 +1,101 @@
 /* UpdateMemory Component Styles */
 .update-page {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white; /* White background for the form */
-    border: 2px dashed #d4af37; /* Gold dashed border */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-    text-align: center;
-  }
-  
-  .update-page h1 {
-    color: #d4af37; /* Gold color for headings */
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
-  
-  .update-page p {
-    font-size: 1em;
-    margin: 10px 0;
-  }
-  
-  /* Form styles */
-  .updateMemoryForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .updateMemoryForm .form-input {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .updateMemoryForm .form-input label {
-    font-size: 1.2em;
-    color: #d4af37; /* Gold color for labels */
-  }
-  
-  .updateMemoryForm .form-input input[type="date"],
-  .updateMemoryForm .form-input textarea {
-    width: calc(100% - 40px); /* Adjust width to account for padding */
-    padding: 10px;
-    border: 1px solid #d4af37; /* Gold border */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 1em;
-    background-color: #fffacd; /* Lemon chiffon background */
-    color: #2f4f4f; /* Dark slate gray text color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
-  }
-  
-  .updateMemoryForm .form-input input[type="date"]:focus,
-  .updateMemoryForm .form-input textarea:focus {
-    outline: none;
-    border-color: #ffdf00; /* Brighter gold on focus */
-    box-shadow: 0 0 5px rgba(255, 223, 0, 0.5); /* Bright gold glow on focus */
-  }
-  
-  .updateMemoryForm .form-input textarea {
-    resize: none; /* Prevent resizing of the textarea */
-  }
-  
-  .updateMemoryForm .form-input button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px; /* Rounded corners */
-    background-color: #d4af37; /* Gold background */
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .updateMemoryForm .form-input button:hover {
-    background-color: #b8860b; /* Darker gold on hover */
-  }
-  
-  .updateMemoryForm .form-input p {
-    font-size: 1em;
-    color: #2f4f4f; /* Dark slate gray color */
-  }
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  /* White background for the form */
+  border: 2px dashed #d4af37;
+  /* Gold dashed border */
+  border-radius: 20px;
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Box shadow for depth */
+  text-align: center;
+}
+
+.update-page h1 {
+  color: #d4af37;
+  /* Gold color for headings */
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.update-page p {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+/* Form styles */
+.updateMemoryForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.updateMemoryForm .form-input {
+  width: 100%;
+  text-align: center;
+}
+
+.updateMemoryForm .form-input label {
+  font-size: 1.2em;
+  color: #d4af37;
+  /* Gold color for labels */
+}
+
+.updateMemoryForm .form-input input[type="date"],
+.updateMemoryForm .form-input textarea {
+  width: calc(100% - 40px);
+  /* Adjust width to account for padding */
+  padding: 10px;
+  border: 1px solid #d4af37;
+  /* Gold border */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 1em;
+  background-color: #fffacd;
+  /* Lemon chiffon background */
+  color: #2f4f4f;
+  /* Dark slate gray text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Box shadow for depth */
+}
+
+.updateMemoryForm .form-input input[type="date"]:focus,
+.updateMemoryForm .form-input textarea:focus {
+  outline: none;
+  border-color: #ffdf00;
+  /* Brighter gold on focus */
+  box-shadow: 0 0 5px rgba(255, 223, 0, 0.5);
+  /* Bright gold glow on focus */
+}
+
+.updateMemoryForm .form-input textarea {
+  resize: none;
+  /* Prevent resizing of the textarea */
+}
+
+.updateMemoryForm .form-input button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  /* Rounded corners */
+  background-color: #d4af37;
+  /* Gold background */
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.updateMemoryForm .form-input button:hover {
+  background-color: #b8860b;
+  /* Darker gold on hover */
+}
+
+.updateMemoryForm .form-input p {
+  font-size: 1em;
+  color: #2f4f4f;
+  /* Dark slate gray color */
+}
