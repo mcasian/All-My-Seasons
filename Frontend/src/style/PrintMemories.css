@@ -1,0 +1,123 @@
+.print-memories-page {
+  width: 100%;
+  page-break-after: always;
+  /* Ensure each memory page breaks after three memories */
+}
+
+@media print {
+  .print-memories-page {
+    page-break-after: always;
+  }
+
+  .memories {
+    width: 100%;
+  }
+
+  .print-memory {
+    width: 100%;
+    page-break-inside: avoid;
+  }
+
+  .print-creator-tag {
+    page-break-inside: avoid;
+    page-break-before: auto;
+    page-break-after: auto;
+  }
+}
+
+.memories {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.print-memory {
+  display: flex;
+  width: 85vw;
+  border: 2px solid #d4af37;
+  /* Gold border */
+  border-radius: 50px;
+  padding: 25px;
+  margin: 55px auto 15px;
+  background: #fff8dc;
+  /* Cornsilk background for a warm, paper-like feel */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  /* Center the content horizontally */
+  position: relative;
+  /* Needed for pseudo-elements */
+  page-break-inside: avoid;
+  /* Avoid breaking within a memory block */
+}
+
+.print-imageContainer {
+  width: 27.5vw;
+  height: 27.5vw;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  /* Needed for pseudo-elements */
+}
+
+.print-imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.print-memoryText {
+  flex: 1;
+  text-align: center;
+}
+
+.print-memoryDateContainer {
+  width: 75%;
+  padding: 10px;
+  border: 1px solid #d4af37;
+  /* Gold border */
+  border-radius: 50px;
+  margin: auto;
+  font-size: 1.3vw;
+  background: #fffacd;
+  /* Lemon chiffon background */
+  position: relative;
+  /* Needed for pseudo-elements */
+}
+
+.print-memoryDescriptionContainer {
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #d4af37;
+  /* Gold border */
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 20px;
+  background: #fffacd;
+  /* Lemon chiffon background */
+  font-size: 1.375vw;
+  color: #2f4f4f;
+  /* Dark slate gray color */
+  position: relative;
+  /* Needed for pseudo-elements */
+}
+
+.print-creator-tag {
+  page-break-before: avoid;
+  position: absolute;
+  bottom: -15px;
+  right: 60px;
+  border: 3px outset #d4af37;
+  border-radius: 30px;
+  background-color: white;
+  page-break-inside: avoid;
+  z-index: 1;
+}
+
+.print-creator-tag p {
+  margin: 4px;
+}
+
+.print-creator-tag span {
+  color: #d4af37;
+}

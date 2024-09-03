@@ -37,6 +37,14 @@ function Home() {
         }
     };
 
+    const goToPrintMemories = () => {
+        const newTab = window.open("", "_blank"); // Open a new tab
+        if (newTab) {
+            newTab.opener = null;
+            newTab.location.href = window.location.origin + "/printmemories";
+        }
+    };
+
     // Logs out the user by clearing userData and deleting their login token
     const logout = () => {
         localStorage.removeItem('token');
@@ -72,6 +80,7 @@ function Home() {
                 <button className="action-button" onClick={viewMemoriesClick}>View Memories</button>
                 <button className="action-button" onClick={createMemoryClick}>Create Memory</button>
                 <button className="action-button" onClick={generateRandomMemory}>Generate Random Post</button>
+                <button className="action-button" onClick={goToPrintMemories}>Print Memories</button>
             </div>
 
             {randomMemory && (

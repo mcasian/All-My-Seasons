@@ -15,6 +15,7 @@ import Memories from './pages/Memories';
 import UpdateMemory from './pages/UpdateMemory';
 import Default from './pages/Default';
 import Profile from './pages/Profile';
+import PrintMemory from './pages/PrintMemory';
 // ---------- IMPORTS END ----------
 
 
@@ -105,6 +106,7 @@ function App() {
             <Route path="/creatememory" element={<CreateMemory />} />
             <Route path="/memories" element={<Memories />} />
             <Route path="/updatememory/:memoryId" element={<UpdateMemory />} />
+            <Route path="/printmemories" element={<PrintMemory />} />
             <Route path="/profile" element={<Profile />} />
           </>
           ) :  (
